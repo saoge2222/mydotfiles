@@ -6,6 +6,8 @@ vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.autoindent = true
 vim.opt.wrap = false
+vim.opt.scrolloff = 20
+vim.opt.sidescrolloff = 20
 vim.opt.cursorline = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
@@ -13,7 +15,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
-vim.opt.showmode = true
+vim.opt.showmode = false
 
 vim.g.mapleader = " "
 
@@ -57,6 +59,14 @@ require("lazy").setup({
             'stevearc/oil.nvim', opts = {},
             dependencies = { "nvim-tree/nvim-web-devicons" }, 
             lazy = false,
+            opts = {
+                columns = {
+                    "permissions","size","icon",
+                },
+                view_options = {
+                    show_hidden = true
+                },
+            }
         },
         -- tree-sitter
         {
